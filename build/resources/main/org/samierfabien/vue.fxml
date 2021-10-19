@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root" minHeight="300.0" minWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.samierfabien.VueController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="textField" alignment="CENTER" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" rowValignment="TOP">
+               <children>
+                  <TitledPane fx:id="menuChoix" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Choix">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <CheckBox fx:id="choixFond" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Couleur de fond">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="choixTexte" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Couleur du texte">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="choixCasse" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Casse">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </CheckBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </FlowPane.margin>
+                  </TitledPane>
+                  <TitledPane fx:id="menuFond" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Fond">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <RadioButton fx:id="fondRouge" contentDisplay="CENTER" mnemonicParsing="false" text="Rouge">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="groupFond" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="fondVert" contentDisplay="CENTER" layoutX="15.0" layoutY="110.0" mnemonicParsing="false" text="Vert" toggleGroup="$groupFond">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="fondBleu" contentDisplay="CENTER" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" text="Bleu" toggleGroup="$groupFond">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </RadioButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </FlowPane.margin>
+                  </TitledPane>
+                  <TitledPane fx:id="menuTexte" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Texte">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <RadioButton fx:id="texteRouge" mnemonicParsing="false" text="Rouge">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="groupPolice" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="texteBlanc" mnemonicParsing="false" text="Blanc" toggleGroup="$groupPolice">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="texteNoir" mnemonicParsing="false" text="Noir" toggleGroup="$groupPolice">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </RadioButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </FlowPane.margin>
+                  </TitledPane>
+                  <TitledPane fx:id="menuCasse" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Casse">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <RadioButton fx:id="casseMinuscule" mnemonicParsing="false" text="Minuscule">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="groupCasse" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="casseMajuscule" mnemonicParsing="false" text="Majuscule" toggleGroup="$groupCasse">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </RadioButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </FlowPane.margin>
+                  </TitledPane>
+               </children>
+            </FlowPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
