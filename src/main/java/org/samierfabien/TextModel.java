@@ -4,6 +4,8 @@ public class TextModel {
     private String texteOriginal;
     private String texteMinuscule;
     private String texteMajuscule;
+    private String fondCouleur = "-fx-background-color: #F4F4F4;";
+    private String texteCouleur = "-fx-text-fill: black;";
 
     public String getTexteOriginal() {
         return texteOriginal;
@@ -27,5 +29,21 @@ public class TextModel {
 
     public void setTexteMajuscule(String texteMajuscule) {
         this.texteMajuscule = texteMajuscule.toUpperCase();
+    }
+
+    public String getFondCouleur() {
+        return fondCouleur;
+    }
+
+    public void setFondCouleur(String fondCouleur) {
+        this.fondCouleur = fondCouleur;
+    }
+
+    public String getTexteCouleur() {
+        return texteCouleur;
+    }
+
+    public void setTexteCouleur(String texteCouleur) {
+        this.texteCouleur = texteCouleur;
     }
 }

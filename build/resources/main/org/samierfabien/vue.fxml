@@ -18,7 +18,7 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <TextField fx:id="textField" alignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="textField" alignment="CENTER" promptText="Tapez votre texte ici" HBox.hgrow="ALWAYS" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -26,7 +26,10 @@
             </HBox>
             <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" text="..." textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></Label>
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -34,7 +37,7 @@
             </HBox>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" rowValignment="TOP">
                <children>
-                  <TitledPane fx:id="menuChoix" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Choix">
+                  <TitledPane fx:id="menuChoix" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Choix">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -67,7 +70,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </FlowPane.margin>
                   </TitledPane>
-                  <TitledPane fx:id="menuFond" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Fond">
+                  <TitledPane fx:id="menuFond" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Fond">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -78,15 +81,15 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                        <toggleGroup>
-                                          <ToggleGroup fx:id="groupFond" />
+                                          <ToggleGroup fx:id="groupeFond" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="fondVert" contentDisplay="CENTER" layoutX="15.0" layoutY="110.0" mnemonicParsing="false" text="Vert" toggleGroup="$groupFond">
+                                    <RadioButton fx:id="fondVert" contentDisplay="CENTER" layoutX="15.0" layoutY="110.0" mnemonicParsing="false" text="Vert" toggleGroup="$groupeFond">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                     </RadioButton>
-                                    <RadioButton fx:id="fondBleu" contentDisplay="CENTER" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" text="Bleu" toggleGroup="$groupFond">
+                                    <RadioButton fx:id="fondBleu" contentDisplay="CENTER" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" text="Bleu" toggleGroup="$groupeFond">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
@@ -103,7 +106,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </FlowPane.margin>
                   </TitledPane>
-                  <TitledPane fx:id="menuTexte" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Texte">
+                  <TitledPane fx:id="menuTexte" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Texte">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -114,15 +117,15 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                        <toggleGroup>
-                                          <ToggleGroup fx:id="groupPolice" />
+                                          <ToggleGroup fx:id="groupeTexte" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="texteBlanc" mnemonicParsing="false" text="Blanc" toggleGroup="$groupPolice">
+                                    <RadioButton fx:id="texteBlanc" mnemonicParsing="false" text="Blanc" toggleGroup="$groupeTexte">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                     </RadioButton>
-                                    <RadioButton fx:id="texteNoir" mnemonicParsing="false" text="Noir" toggleGroup="$groupPolice">
+                                    <RadioButton fx:id="texteNoir" mnemonicParsing="false" text="Noir" toggleGroup="$groupeTexte">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
@@ -139,7 +142,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </FlowPane.margin>
                   </TitledPane>
-                  <TitledPane fx:id="menuCasse" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Casse">
+                  <TitledPane fx:id="menuCasse" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Casse">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -150,10 +153,10 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                        <toggleGroup>
-                                          <ToggleGroup fx:id="groupCasse" />
+                                          <ToggleGroup fx:id="groupeCasse" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="casseMajuscule" mnemonicParsing="false" text="Majuscule" toggleGroup="$groupCasse">
+                                    <RadioButton fx:id="casseMajuscule" mnemonicParsing="false" text="Majuscule" toggleGroup="$groupeCasse">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>

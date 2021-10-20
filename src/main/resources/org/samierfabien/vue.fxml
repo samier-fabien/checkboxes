@@ -18,7 +18,7 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <TextField fx:id="textField" alignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="textField" alignment="CENTER" promptText="Tapez votre texte ici" HBox.hgrow="ALWAYS" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -26,7 +26,10 @@
             </HBox>
             <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" text="..." textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></Label>
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -34,7 +37,7 @@
             </HBox>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" rowValignment="TOP">
                <children>
-                  <TitledPane fx:id="menuChoix" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Choix">
+                  <TitledPane fx:id="menuChoix" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Choix">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -67,7 +70,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </FlowPane.margin>
                   </TitledPane>
-                  <TitledPane fx:id="menuFond" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Fond">
+                  <TitledPane fx:id="menuFond" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Fond">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -103,7 +106,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </FlowPane.margin>
                   </TitledPane>
-                  <TitledPane fx:id="menuTexte" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Texte">
+                  <TitledPane fx:id="menuTexte" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Texte">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -139,7 +142,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </FlowPane.margin>
                   </TitledPane>
-                  <TitledPane fx:id="menuCasse" animated="false" collapsible="false" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Casse">
+                  <TitledPane fx:id="menuCasse" animated="false" collapsible="false" disable="true" maxHeight="180.0" maxWidth="180.0" minHeight="180.0" minWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Casse">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>

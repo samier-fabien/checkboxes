@@ -1,6 +1,5 @@
 package org.samierfabien;
 
-import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -53,14 +52,20 @@ public class VueController {
     public VueController() {
         this.textModel = new TextModel();
     }
+
     @FXML
     public void initialize() {
-        textChanged("");
-        ajoutTextEvenements();
-        System.out.println("text original : \""+textModel.getTexteOriginal()+"\"");
+        modelMAJ("");
+        evenementTexte();
+        evenementMenuFond();
+        evenementMenuTexte();
+        evenementMenuCasse();
+        evenementChoixFond();
+        evenementChoixTexte();
+        evenementChoixCasse();
     }
 
-    public void ajoutTextEvenements() {
+    public void evenementTexte() {
         /*
         -Evénementiel via des EventHandler.
         -Possible aussi de le faire via fxml avec scenebuilder. Dans ce cas là, pas besoin de coder ce qui suit, ça sera
@@ -71,34 +76,99 @@ public class VueController {
             }
         });
         */
-
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            textChanged(newValue);
+            modelMAJ(newValue);
+            setLabel();
+            menuChoixChanged();
         });
     }
 
-    public void textChanged(String newValue) {
-        System.out.println("text changé");
-        setText(newValue);
-        setLabel(newValue);
-        menuChoixChanged();
+    public void evenementMenuFond() {
+        choixFond.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            menuFond.setDisable(!newValue);
+        });
     }
 
-    private void setLabel(String newValue) {
+    public void evenementMenuTexte() {
+        choixTexte.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            menuTexte.setDisable(!newValue);
+        });
+    }
+
+    public void evenementMenuCasse() {
+        choixCasse.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            menuCasse.setDisable(!newValue);
+            setLabel();
+        });
+    }
+
+    public void evenementChoixFond() {
+        groupeFond.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                RadioButton temp = (RadioButton)newValue.getToggleGroup().getSelectedToggle();
+                setFond(temp.getText());
+            } catch (Exception e) {}
+        });
+    }
+
+    public void evenementChoixTexte() {
+        groupeTexte.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                RadioButton temp = (RadioButton)newValue.getToggleGroup().getSelectedToggle();
+                setColor(temp.getText());
+            } catch (Exception e) {}
+        });
+    }
+
+    public void evenementChoixCasse() {
+        groupeCasse.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                RadioButton temp = (RadioButton)newValue.getToggleGroup().getSelectedToggle();
+                setLabel();
+            } catch (Exception e) {}
+        });
+    }
+
+    public void setFond(String color) {
+        switch (color) {
+            case "Rouge" -> textModel.setFondCouleur("-fx-background-color: red;");
+            case "Vert" -> textModel.setFondCouleur("-fx-background-color: green;");
+            case "Bleu" -> textModel.setFondCouleur("-fx-background-color: blue;");
+            default -> textModel.setFondCouleur("-fx-background-color: white;");
+        }
+        setLabel();
+    }
+
+    private void setColor(String color) {
+        switch (color) {
+            case "Rouge" -> textModel.setTexteCouleur("-fx-text-fill: red;");
+            case "Blanc" -> textModel.setTexteCouleur("-fx-text-fill: white;");
+            default -> textModel.setTexteCouleur("-fx-text-fill: black;");
+        }
+        setLabel();
+    }
+
+    public void setLabel() {
+        label.setStyle(textModel.getFondCouleur()+textModel.getTexteCouleur());
         if (choixCasse.isSelected()) {
-            if (groupeCasse.selectedToggleProperty().getValue().equals("Minuscule")) {
-                label.setText(textModel.getTexteMinuscule());
-            } else if (groupeCasse.selectedToggleProperty().getValue().equals("Majuscule")) {
-                label.setText(textModel.getTexteMajuscule());
-            } else {
-                label.setText(textModel.getTexteOriginal());
+            try {
+                RadioButton temp = (RadioButton)groupeCasse.getSelectedToggle();
+                if (temp.getText().equals("Minuscule")) {
+                    label.setText(textModel.getTexteMinuscule());
+                } else if (temp.getText().equals("Majuscule")) {
+                    label.setText(textModel.getTexteMajuscule());
+                } else {
+                    label.setText(textModel.getTexteOriginal());
+                }
+            } catch (Exception e) {
+
             }
         } else {
             label.setText(textModel.getTexteOriginal());
         }
     }
 
-    public void setText(String newValue) {
+    public void modelMAJ(String newValue) {
         textModel.setTexteOriginal(newValue);
         textModel.setTexteMinuscule(textModel.getTexteOriginal());
         textModel.setTexteMajuscule(textModel.getTexteOriginal());
@@ -106,10 +176,31 @@ public class VueController {
 
     public void menuChoixChanged() {
         if (textModel.getTexteOriginal().equals("")) {
-            menuChoix.setDisable(true);
+            remiseAZero();
         } else {
             menuChoix.setDisable(false);
         }
+    }
+
+    private void remiseAZero() {
+        menuChoix.setDisable(true);
+        menuFond.setDisable(true);
+        menuTexte.setDisable(true);
+        menuCasse.setDisable(true);
+        choixFond.setSelected(false);
+        choixTexte.setSelected(false);
+        choixCasse.setSelected(false);
+        fondRouge.setSelected(false);
+        fondBleu.setSelected(false);
+        fondVert.setSelected(false);
+        texteRouge.setSelected(false);
+        texteBlanc.setSelected(false);
+        texteNoir.setSelected(false);
+        casseMinuscule.setSelected(false);
+        casseMajuscule.setSelected(false);
+        textModel.setFondCouleur("-fx-background-color: #F4F4F4;");
+        textModel.setTexteCouleur("-fx-text-fill: black;");
+        setLabel();
     }
 
 }
