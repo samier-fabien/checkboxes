@@ -4,6 +4,7 @@ public class TextModel {
     private String texteOriginal;
     private String texteMinuscule;
     private String texteMajuscule;
+    //Pas très fan mettre les variables suivantes ici mais ça me semblait plus bizarre encore dans le controller.
     private String fondCouleur = "-fx-background-color: #F4F4F4;";
     private String texteCouleur = "-fx-text-fill: black;";
 
