@@ -78,15 +78,15 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                        <toggleGroup>
-                                          <ToggleGroup fx:id="groupFond" />
+                                          <ToggleGroup fx:id="groupeFond" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="fondVert" contentDisplay="CENTER" layoutX="15.0" layoutY="110.0" mnemonicParsing="false" text="Vert" toggleGroup="$groupFond">
+                                    <RadioButton fx:id="fondVert" contentDisplay="CENTER" layoutX="15.0" layoutY="110.0" mnemonicParsing="false" text="Vert" toggleGroup="$groupeFond">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                     </RadioButton>
-                                    <RadioButton fx:id="fondBleu" contentDisplay="CENTER" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" text="Bleu" toggleGroup="$groupFond">
+                                    <RadioButton fx:id="fondBleu" contentDisplay="CENTER" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" text="Bleu" toggleGroup="$groupeFond">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
@@ -114,15 +114,15 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                        <toggleGroup>
-                                          <ToggleGroup fx:id="groupPolice" />
+                                          <ToggleGroup fx:id="groupeTexte" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="texteBlanc" mnemonicParsing="false" text="Blanc" toggleGroup="$groupPolice">
+                                    <RadioButton fx:id="texteBlanc" mnemonicParsing="false" text="Blanc" toggleGroup="$groupeTexte">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                     </RadioButton>
-                                    <RadioButton fx:id="texteNoir" mnemonicParsing="false" text="Noir" toggleGroup="$groupPolice">
+                                    <RadioButton fx:id="texteNoir" mnemonicParsing="false" text="Noir" toggleGroup="$groupeTexte">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
@@ -150,10 +150,10 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                        <toggleGroup>
-                                          <ToggleGroup fx:id="groupCasse" />
+                                          <ToggleGroup fx:id="groupeCasse" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="casseMajuscule" mnemonicParsing="false" text="Majuscule" toggleGroup="$groupCasse">
+                                    <RadioButton fx:id="casseMajuscule" mnemonicParsing="false" text="Majuscule" toggleGroup="$groupeCasse">
                                        <VBox.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>

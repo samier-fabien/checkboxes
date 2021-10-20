@@ -44,9 +44,9 @@ public class VueController {
     @FXML
     public RadioButton casseMajuscule;
     @FXML
-    public ToggleGroup goupeFond;
+    public ToggleGroup groupeFond;
     @FXML
-    public ToggleGroup groupeText;
+    public ToggleGroup groupeTexte;
     @FXML
     public ToggleGroup groupeCasse;
 
@@ -55,7 +55,9 @@ public class VueController {
     }
     @FXML
     public void initialize() {
+        textChanged("");
         ajoutTextEvenements();
+        System.out.println("text original : \""+textModel.getTexteOriginal()+"\"");
     }
 
     public void ajoutTextEvenements() {
@@ -75,11 +77,39 @@ public class VueController {
         });
     }
 
-    public void textChanged (String newValue) {
+    public void textChanged(String newValue) {
         System.out.println("text changé");
+        setText(newValue);
+        setLabel(newValue);
+        menuChoixChanged();
+    }
+
+    private void setLabel(String newValue) {
+        if (choixCasse.isSelected()) {
+            if (groupeCasse.selectedToggleProperty().getValue().equals("Minuscule")) {
+                label.setText(textModel.getTexteMinuscule());
+            } else if (groupeCasse.selectedToggleProperty().getValue().equals("Majuscule")) {
+                label.setText(textModel.getTexteMajuscule());
+            } else {
+                label.setText(textModel.getTexteOriginal());
+            }
+        } else {
+            label.setText(textModel.getTexteOriginal());
+        }
+    }
+
+    public void setText(String newValue) {
         textModel.setTexteOriginal(newValue);
         textModel.setTexteMinuscule(textModel.getTexteOriginal());
         textModel.setTexteMajuscule(textModel.getTexteOriginal());
+    }
+
+    public void menuChoixChanged() {
+        if (textModel.getTexteOriginal().equals("")) {
+            menuChoix.setDisable(true);
+        } else {
+            menuChoix.setDisable(false);
+        }
     }
 
 }
